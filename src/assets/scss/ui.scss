@@ -1,0 +1,61 @@
+@import "_variables.scss";
+
+button.primary__btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+
+  box-shadow: 0 2px 5px rgb(14 19 28 / 40%);
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 10px;
+  transition-duration: 0.5s;
+
+  margin-bottom: 15px;
+
+  &.full {
+    width: 100%;
+  }
+  &.inline {
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    &:hover {
+      background-color: transparent;
+    }
+    &:active {
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+  &:hover {
+    background-color: #c43f3f;
+    box-shadow: 0 10px 20px rgb(14 19 28 / 40%);
+  }
+
+  &:active {
+    background-color: $primary-color;
+  }
+
+  &:disabled {
+    background-color: $primary-color;
+    opacity: 0.5;
+  }
+}
+
+.checkbox__wrapper {
+  height: 15px;
+  width: 15px;
+  border: 1px solid $secondary-color;
+  padding: 1px;
+  cursor: pointer;
+  .active {
+    background-color: $primary-color;
+    width: 100%;
+    height: 100%;
+  }
+}

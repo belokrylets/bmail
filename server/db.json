@@ -1,0 +1,244 @@
+{
+  "messages": [
+    {
+      "id": "705801a2-9149-43f8-8d58-0c22d657ab16",
+      "contact": {
+        "email": "Sincere@april.biz",
+        "name": "Leanne Graham"
+      },
+      "subject": "",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "new"
+    },
+    {
+      "id": "540e81dc-d8b5-4d3d-b746-f4646ce9562d",
+      "contact": {
+        "email": "Ervin@april.biz",
+        "name": "Ervin Howell"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "ed1a1da0-cd1e-47ce-be04-2433b6a6469d",
+      "contact": {
+        "email": "Nathan@yesenia.net",
+        "name": "Clementine Bauch"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "new"
+    },
+    {
+      "id": "5629cdfa-ab11-4068-9808-f55278734bb5",
+      "contact": {
+        "email": "Julianne.OConner@kory.org",
+        "name": "Patricia Lebsack"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "sent",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "5629cdfa-ab11-4068-9808-f55278734bb5",
+      "contact": {
+        "email": "Lucio_Hettinger@annie.ca",
+        "name": "Chelsey Dietrich"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "8faf0a41-1870-4b7c-a617-141d3d7e47b7",
+      "contact": {
+        "email": "Karley_Dach@jasper.info",
+        "name": "Dennis Schulist"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "340fa2fe-d2fd-4028-9dc8-31eea6e6a8e8",
+      "contact": {
+        "email": "Telly.Hoeger@billy.biz",
+        "name": "Kurtis Weissnat"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "sent",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "80a65c94-118b-4900-aaef-79ee8a061094",
+      "contact": {
+        "email": "Sherwood@rosamond.me",
+        "name": "Nicholas Runolfsdottir"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "c4f5b932-767d-4b91-b685-3a59fd3ea574",
+      "contact": {
+        "email": "Sincere@april.biz",
+        "name": "Leanne Graham"
+      },
+      "subject": "",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "sent",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "4f0e9f75-af09-4185-bf8c-b8ab2171a023",
+      "contact": {
+        "email": "Karley_Dach@jasper.info",
+        "name": "Dennis Schulist"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "b6e2666d-5d14-49a4-86b0-d17e6bde4fc6",
+      "contact": {
+        "email": "Lucio_Hettinger@annie.ca",
+        "name": "Chelsey Dietrich"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "sent",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "5cc43282-ce10-4d30-8ef2-c9a090cfcbb2",
+      "contact": {
+        "email": "Chaim_McDermott@dana.io",
+        "name": "Glenna Reichert"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "f6f618b3-653a-4243-bd03-41ff875d92ae",
+      "contact": {
+        "email": "Rey.Padberg@karina.biz",
+        "name": "Clementina DuBuque"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "77709016-ebc9-4c71-a882-bffe0499eb0a",
+      "contact": {
+        "email": "Nathan@yesenia.net",
+        "name": "Clementine Bauch"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "273c7b79-9809-43eb-8c33-cd65ee9fd34f",
+      "contact": {
+        "email": "Shanna@melissa.tv",
+        "name": "Ervin Howell"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "9b59450d-ca52-46b4-9437-bfb1019383e6",
+      "contact": {
+        "email": "Julianne.OConner@kory.org",
+        "name": "Patricia Lebsack"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "22edac7e-0e62-464e-b522-62493445996f",
+      "contact": {
+        "email": "Rey.Padberg@karina.biz",
+        "name": "Clementina DuBuque"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "f6b74db0-12a2-497d-8eb9-ebb97d00d915",
+      "contact": {
+        "email": "Chaim_McDermott@dana.io",
+        "name": "Glenna Reichert"
+      },
+      "subject": "",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "a5cf2e01-ebaa-4aac-bb98-f7f6247cf209",
+      "contact": {
+        "email": "Telly.Hoeger@billy.biz",
+        "name": "Kurtis Weissnat"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    },
+    {
+      "id": "8d7a43fc-63ae-4fb4-a453-bf9a0f9e70ab",
+      "contact": {
+        "email": "strSherwood@rosamond.meing",
+        "name": "Nicholas Runolfsdottir"
+      },
+      "subject": "subject",
+      "messageBody": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis alias ea mollitia officia sed. Ipsam eveniet non quidem nesciunt, unde praesentium, adipisci dolorem dicta voluptates vel, suscipit incidunt soluta quam?",
+      "folder": "incoming",
+      "date": 1680433657329,
+      "status": "read"
+    }
+  ]
+}

@@ -5,20 +5,51 @@
 
 @import "_variables.scss";
 @import "nullStyles.scss";
+@import "navbar.scss";
+@import "mailPage.scss";
+@import "ui.scss";
+@import "footer.scss";
 
 body {
   margin: 0;
   font-family: "Montserrat";
+  font-size: 16px;
+  line-height: 20px;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
   min-height: 100%;
 }
 
 main {
   flex: 1 1 auto;
-  margin-bottom: 80px;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0px auto;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+  }
 }

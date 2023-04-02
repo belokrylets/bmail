@@ -1,0 +1,28 @@
+header {
+  height: 70px;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  .header__content {
+    display: flex;
+    align-items: center;
+    .header__menu,
+    .menu {
+      .menu__list {
+        display: flex;
+        gap: 15px;
+        .menu__item {
+          text-transform: uppercase;
+          letter-spacing: 0.6px;
+          font-weight: 600;
+          cursor: pointer;
+          a {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
