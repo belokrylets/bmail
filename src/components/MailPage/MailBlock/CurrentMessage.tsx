@@ -1,20 +1,58 @@
 import Button from "components/UI/Button"
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
+import { Context } from "../MailPage"
+import { useAppDispatch, useAppSelector } from "hooks/redux"
+import { messageSelector } from "store/reducers/messagesSlice/messagesSlice"
+import { actions as messageActions } from "store/reducers/messagesSlice/messagesSlice"
+import IconDelete from "assets/icons/IconDelete"
+import IconFolder from "assets/icons/IconFolder"
 
-interface CurrentMessageProps {
-  messageId: string
-}
+const CurrentMessage = () => {
+  const dispatch = useAppDispatch()
+  const { selectedMessage } = useContext(Context)
+  const [message, setMessage] = useState<IMessages>({
+    id: "",
+    contact: {
+      email: "",
+      name: "",
+    },
+    date: "",
+    folder: "",
+    messageBody: "",
+    status: "",
+    subject: "",
+  } as IMessages)
+  const allMessages = useAppSelector(messageSelector.selectEntities)
 
-const CurrentMessage: React.FC<CurrentMessageProps> = ({ messageId }) => {
+  useEffect(() => {
+    setMessage({ ...allMessages[selectedMessage]! })
+    dispatch(
+      messageActions.updateMessage({
+        id: selectedMessage,
+        changes: { ...allMessages[selectedMessage]!, status: "read" },
+      })
+    )
+  }, [])
+
   return (
-    <div className="current__message">
-      <div className="current__message__subject">(без темы)</div>
-      <div className="current__message__info">current__message__info</div>
-      <div className="current__message__body">current__message__body</div>
-      <div className="current__message__buttons">
-        <Button variant="inline">Ответить</Button>
-        <Button variant="inline">Переслать</Button>
+    <div className='current__message'>
+      <div className='current__message__subject'>
+        {!!message.subject ? message.subject : "(без темы)"}
+        <div className='header__interface__menu'>
+          <div>
+            <IconDelete />
+          </div>
+          <div>
+            <IconFolder />
+          </div>
+        </div>
+      </div>
+      <div className='current__message__info'>{message.contact.email}</div>
+      <div className='current__message__body'>{message.messageBody}</div>
+      <div className='current__message__buttons'>
+        <Button variant='inline'>Ответить</Button>
+        <Button variant='inline'>Переслать</Button>
       </div>
     </div>
   )

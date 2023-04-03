@@ -1,136 +1,213 @@
 @import "_variables.scss";
 
-.mail__page__content {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto;
-  gap: 30px;
-  .sidebar {
+.mail__page {
+  position: relative;
+
+  .new__message {
+    position: absolute;
+    bottom: 0;
+
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    .sidebar__item {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      svg {
-        color: $secondary-color;
-      }
-      cursor: pointer;
-      &.active {
-        color: $primary-color;
-        svg {
-          color: $primary-color;
-        }
-      }
-    }
-  }
-  .mail__block {
-    box-shadow: 0 2px 16px rgb(57 57 61 / 11%);
-    width: 100%;
-    border-radius: 15px;
-    padding: 20px 0;
 
-    .mail__block__header {
+    display: grid;
+    grid-template-rows: 30px 35px 35px 1fr 50px;
+
+    height: 500px;
+    width: 600px;
+
+    background-color: white;
+
+    border-radius: 8px;
+    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+
+    .new__message__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 0 20px 10px 20px;
+      font-size: 14px;
 
-      .mail__block__header__interface,
-      .header__interface {
+      background-color: $primary-color;
+      height: 30px;
+      color: white;
+      border-radius: 8px 8px 0 0;
+      padding: 0 20px;
+
+      .new__message__header__icons {
         display: flex;
-        gap: 40px;
-
-        .header__interface__menu {
-          display: flex;
-          gap: 15px;
-
-          svg {
-            cursor: pointer;
-            color: $secondary-color;
-            &:hover {
-              color: $primary-color;
-            }
-          }
-        }
-      }
-      .mail__block__header__search {
-        border: none;
-        background-color: rgb(247, 247, 247);
-        padding: 5px 10px;
+        gap: 10px;
+        cursor: pointer;
       }
     }
-    .mail__block__body {
-      border-top: 1px solid $secondary-color;
-      overflow: auto;
+    .new__message__input {
+      border-bottom: 1px solid $secondary-color;
+      height: 35px;
 
-      height: 100%;
+      margin: 0 20px;
 
-      .current__message {
-        padding: 20px 20px 0 20px;
+      input {
+        padding: 0 5px;
+        border: none;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .new__message__button__group {
+      padding: 0 20px;
+      display: flex;
+      gap: 20px;
+    }
+    .new__message__textarea {
+      border-bottom: 1px solid $secondary-color;
+
+      margin: 0 20px 20px 20px;
+      textarea {
+        height: 100%;
+        width: 100%;
+        resize: none;
+        border: none;
+        padding: 10px 5px;
+      }
+    }
+  }
+  .mail__page__content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    gap: 30px;
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .sidebar__item {
         display: flex;
-        flex-direction: column;
         gap: 10px;
-        .current__message__subject {
-          font-size: 20px;
-          font-weight: 600;
+        align-items: center;
+        svg {
+          color: $secondary-color;
         }
-        .current__message__info {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-        }
-        .current__message__body {
-          border-bottom: 1px solid $secondary-color;
-          padding: 20px 0;
-          min-height: 300px;
-        }
-        .current__message__buttons {
-          display: flex;
-          justify-content: flex-start;
-          gap: 20px;
+        cursor: pointer;
+        &.active {
+          color: $primary-color;
+          svg {
+            color: $primary-color;
+          }
         }
       }
+    }
+    .mail__block {
+      box-shadow: 0 2px 16px rgb(57 57 61 / 11%);
+      width: 100%;
+      border-radius: 15px;
+      padding: 20px 0;
 
-      .messages__list {
-        .message__item {
-          padding: 0 20px;
-          display: grid;
-          grid-template-columns: 20px 200px 1fr auto;
-          gap: 10px;
-          align-items: center;
-          height: 40px;
-          border-bottom: 1px solid rgb(241, 241, 241);
-          cursor: pointer;
-          &:last-child {
-            border: none;
+      .mail__block__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 20px 10px 20px;
+
+        .mail__block__header__interface,
+        .header__interface {
+          display: flex;
+          gap: 40px;
+
+          .header__interface__menu {
+            display: flex;
+            gap: 15px;
+
+            svg {
+              cursor: pointer;
+              color: $secondary-color;
+              &:hover {
+                color: $primary-color;
+              }
+            }
           }
-          &.closed {
+        }
+        .mail__block__header__search {
+          border: none;
+          background-color: rgb(247, 247, 247);
+          padding: 5px 10px;
+        }
+      }
+      .mail__block__body {
+        border-top: 1px solid $secondary-color;
+        overflow: auto;
+
+        height: 100%;
+
+        .current__message {
+          padding: 20px 20px 0 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .current__message__subject {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            font-size: 20px;
             font-weight: 600;
           }
-          .message__item__address,
-          .message__item__message {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+          .current__message__info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
           }
-          .message__item__interface {
-            display: none;
+          .current__message__body {
+            border-bottom: 1px solid $secondary-color;
+            padding: 20px 0;
+            min-height: 300px;
           }
-          &:hover {
-            background-color: rgb(241, 241, 241);
-            .message__item__date {
-              display: none;
+          .current__message__buttons {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+          }
+        }
+
+        .messages__list {
+          .message__item {
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 20px 200px 1fr auto;
+            gap: 10px;
+            align-items: center;
+            height: 40px;
+            border-bottom: 1px solid rgb(241, 241, 241);
+            cursor: pointer;
+            &:last-child {
+              border: none;
+            }
+            &.closed {
+              font-weight: 600;
+            }
+            .message__item__address,
+            .message__item__message {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
             .message__item__interface {
-              display: flex;
-              gap: 20px;
-              svg {
-                color: $secondary-color;
-                &:hover {
-                  color: $primary-color;
+              display: none;
+            }
+            &:hover {
+              background-color: rgb(241, 241, 241);
+              .message__item__date {
+                display: none;
+              }
+              .message__item__interface {
+                display: flex;
+                gap: 20px;
+                svg {
+                  color: $secondary-color;
+                  &:hover {
+                    color: $primary-color;
+                  }
                 }
               }
             }

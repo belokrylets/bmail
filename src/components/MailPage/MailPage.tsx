@@ -20,6 +20,8 @@ const MailPage = () => {
 
   const [checkboxState, setCheckboxState] = useState<string[]>([])
   const [searchState, setSearchState] = useState("")
+  const [newMessageIsShow, setNewMessageIsShow] = useState<boolean>(false)
+  const [selectedMessage, setSelectedMessage] = useState("")
   return (
     <Context.Provider
       value={{
@@ -29,11 +31,14 @@ const MailPage = () => {
         setCheckboxState,
         searchState,
         setSearchState,
-      }}
-    >
-      <main>
-        <div className="container">
-          <div className="mail__page__content">
+        newMessageIsShow,
+        setNewMessageIsShow,
+        selectedMessage,
+        setSelectedMessage,
+      }}>
+      <main className='mail__page'>
+        <div className='container'>
+          <div className='mail__page__content'>
             <Sidebar />
             <MailBlock />
           </div>

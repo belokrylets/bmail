@@ -5,9 +5,10 @@ import { messageSelector } from "store/reducers/messagesSlice/messagesSlice"
 import { Context } from "../MailPage"
 import MailBlocHeader from "./MailBlocHeader"
 import MailBlockBody from "./MailBlockBody"
+import NewMessage from "./NewMessage"
 
 const MailBlock = () => {
-  const { activeFolder, searchState } = useContext(Context)
+  const { activeFolder, searchState, newMessageIsShow } = useContext(Context)
   const allMessage = useAppSelector(messageSelector.selectAll)
   const folders = useAppSelector(foldersSelector.selectEntities)
   const filteredMessage = allMessage
@@ -18,9 +19,10 @@ const MailBlock = () => {
         .includes(searchState.toLocaleLowerCase())
     )
   return (
-    <div className="mail__block">
+    <div className='mail__block'>
       <MailBlocHeader messagesList={filteredMessage} />
       <MailBlockBody messagesList={filteredMessage} />
+      {newMessageIsShow && <NewMessage />}
     </div>
   )
 }

@@ -18,18 +18,28 @@ const iconsMapping: { [key: string]: JSX.Element } = {
 }
 
 const Sidebar = () => {
-  const { activeFolder, setActiveFolder, setCheckboxState } =
-    useContext(Context)
+  const {
+    activeFolder,
+    setActiveFolder,
+    setCheckboxState,
+    setNewMessageIsShow,
+    setSelectedMessage,
+  } = useContext(Context)
   const allFolder = useAppSelector(foldersSelector.selectAll)
 
   const activeFolderHandle = (id: string) => {
     setActiveFolder(id)
     setCheckboxState([])
+    setSelectedMessage("")
+  }
+
+  const buttonHandle = () => {
+    setNewMessageIsShow(true)
   }
   return (
-    <aside className="sidebar">
-      <div className="sidebar__new__message">
-        <Button width="full">
+    <aside className='sidebar'>
+      <div className='sidebar__new__message'>
+        <Button onClick={buttonHandle} width='full'>
           <IconNewMessage /> Написать
         </Button>
       </div>
@@ -41,8 +51,7 @@ const Sidebar = () => {
           key={folder.id}
           className={classNames("sidebar__item", {
             active: folder.id === activeFolder,
-          })}
-        >
+          })}>
           {iconsMapping[folder.slug]}
           {folder.title}
         </div>
