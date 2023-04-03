@@ -41,7 +41,11 @@ const initialState = foldersAdapter.getInitialState({
 const foldersSlice = createSlice({
   name: "folders",
   initialState,
-  reducers: {},
+  reducers: {
+    newFolder: foldersAdapter.addOne,
+    updateFolder: foldersAdapter.updateOne,
+    removeFolder: foldersAdapter.removeOne,
+  },
 })
 
 export const { actions } = foldersSlice

@@ -59,3 +59,28 @@ button.primary__btn {
     height: 100%;
   }
 }
+
+div.folder__icon {
+  position: relative;
+  cursor: pointer;
+  .move__folder__list {
+    position: absolute;
+    right: 0;
+    font-family: "Montserrat";
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgb(14 19 28 / 40%);
+    padding: 20px;
+    .move__folder__item {
+      cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

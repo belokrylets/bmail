@@ -67,8 +67,8 @@ const NewMessage = () => {
   }
 
   return (
-    <div className='new__message'>
-      <div className='new__message__header'>
+    <div className="new__message">
+      <div className="new__message__header">
         <span>
           {!!newMassageState.subject
             ? newMassageState.subject
@@ -76,29 +76,30 @@ const NewMessage = () => {
         </span>
         <div
           onClick={buttonCloseHandle}
-          className='new__message__header__icons'>
+          className="new__message__header__icons"
+        >
           <IconCloseNewMessage />
         </div>
       </div>
       <NewMessageInput
-        placeholder='Получатель'
+        placeholder="Получатель"
         value={newMassageState.email}
-        name='email'
+        name="email"
         newMessageHandle={newMessageHandle}
       />
       <NewMessageInput
-        placeholder='Тема'
+        placeholder="Тема"
         value={newMassageState.subject}
-        name='subject'
+        name="subject"
         newMessageHandle={newMessageHandle}
       />
       <NewMessageTextarea
-        placeholder='Сообщение'
+        placeholder="Сообщение"
         value={newMassageState.body}
-        name='body'
+        name="body"
         newMessageHandle={newMessageHandle}
       />
-      <div className='new__message__button__group'>
+      <div className="new__message__button__group">
         <Button isDisabled={!newMassageState.email} onClick={buttonSentHandle}>
           Отправить
         </Button>
@@ -108,7 +109,8 @@ const NewMessage = () => {
             !newMassageState.subject &&
             !newMassageState.body
           }
-          onClick={buttonDraftHandle}>
+          onClick={buttonDraftHandle}
+        >
           В черновики
         </Button>
       </div>

@@ -3,7 +3,7 @@ import IconFolder from "assets/icons/IconFolder"
 import IconOpen from "assets/icons/IconOpen"
 import Checkbox from "components/UI/Checkbox"
 import { useAppDispatch, useAppSelector } from "hooks/redux"
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { foldersSelector } from "store/reducers/foldersSlice/foldersSlice"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import {
@@ -13,12 +13,15 @@ import {
 import { Context } from "../MailPage"
 import MainBlockSearch from "./MainBlockSearch"
 import IconBack from "assets/icons/IconBack"
+import MoveList from "components/UI/MoveList"
 
 interface MailBlocHeaderProps {
   messagesList: IMessages[]
 }
 
 const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
+  const dispatch = useAppDispatch()
+
   const {
     checkboxState,
     setCheckboxState,
@@ -26,9 +29,11 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
     selectedMessage,
     setSelectedMessage,
   } = useContext(Context)
+
   const folders = useAppSelector(foldersSelector.selectEntities)
   const allMessages = useAppSelector(messageSelector.selectEntities)
-  const dispatch = useAppDispatch()
+
+  const [isShowMoveList, setIsShowMoveList] = useState(false)
 
   const checkboxHandle = () => {
     setCheckboxState((prev) => {
@@ -63,11 +68,15 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
   const backHandle = () => {
     setSelectedMessage("")
   }
+
+  const showMoveListHandle = () => {
+    setIsShowMoveList((prev) => !prev)
+  }
   return (
-    <div className='mail__block__header'>
-      <div className='mail__block__header__interface header__interface'>
+    <div className="mail__block__header">
+      <div className="mail__block__header__interface header__interface">
         {!!selectedMessage ? (
-          <div onClick={backHandle} className='header__interface__menu'>
+          <div onClick={backHandle} className="header__interface__menu">
             <IconBack />
           </div>
         ) : (
@@ -81,15 +90,16 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
           </div>
         )}
         {!!checkboxState.length && (
-          <div className='header__interface__menu'>
+          <div className="header__interface__menu">
             <div onClick={readMessagesHandle}>
               <IconOpen />
             </div>
             <div onClick={deleteHandle}>
               <IconDelete />
             </div>
-            <div>
+            <div onClick={showMoveListHandle} className="folder__icon">
               <IconFolder />
+              {isShowMoveList && <MoveList ids={checkboxState} />}
             </div>
           </div>
         )}

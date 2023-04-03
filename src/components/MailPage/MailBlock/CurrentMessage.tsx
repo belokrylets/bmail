@@ -7,10 +7,11 @@ import { messageSelector } from "store/reducers/messagesSlice/messagesSlice"
 import { actions as messageActions } from "store/reducers/messagesSlice/messagesSlice"
 import IconDelete from "assets/icons/IconDelete"
 import IconFolder from "assets/icons/IconFolder"
+import MoveList from "components/UI/MoveList"
 
 const CurrentMessage = () => {
   const dispatch = useAppDispatch()
-  const { selectedMessage } = useContext(Context)
+  const { selectedMessage, setSelectedMessage } = useContext(Context)
   const [message, setMessage] = useState<IMessages>({
     id: "",
     contact: {
@@ -24,7 +25,7 @@ const CurrentMessage = () => {
     subject: "",
   } as IMessages)
   const allMessages = useAppSelector(messageSelector.selectEntities)
-
+  const [isShowMoveList, setIsShowMoveList] = useState(false)
   useEffect(() => {
     setMessage({ ...allMessages[selectedMessage]! })
     dispatch(
@@ -35,24 +36,43 @@ const CurrentMessage = () => {
     )
   }, [])
 
+  const deleteHandle = () => {
+    if (message.folder !== "cart") {
+      const updatedMessage: IMessages = { ...message, folder: "cart" }
+      dispatch(
+        messageActions.updateMessage({
+          id: message.id,
+          changes: updatedMessage,
+        })
+      )
+    } else {
+      dispatch(messageActions.removeMessage(message.id))
+    }
+    setSelectedMessage("")
+  }
+
+  const showMoveListHandle = () => {
+    setIsShowMoveList((prev) => !prev)
+  }
   return (
-    <div className='current__message'>
-      <div className='current__message__subject'>
+    <div className="current__message">
+      <div className="current__message__subject">
         {!!message.subject ? message.subject : "(без темы)"}
-        <div className='header__interface__menu'>
-          <div>
+        <div className="current__message__subject__interface">
+          <div onClick={deleteHandle}>
             <IconDelete />
           </div>
-          <div>
+          <div onClick={showMoveListHandle} className="folder__icon">
             <IconFolder />
+            {isShowMoveList && <MoveList ids={[selectedMessage]} />}
           </div>
         </div>
       </div>
-      <div className='current__message__info'>{message.contact.email}</div>
-      <div className='current__message__body'>{message.messageBody}</div>
-      <div className='current__message__buttons'>
-        <Button variant='inline'>Ответить</Button>
-        <Button variant='inline'>Переслать</Button>
+      <div className="current__message__info">{message.contact.email}</div>
+      <div className="current__message__body">{message.messageBody}</div>
+      <div className="current__message__buttons">
+        <Button variant="inline">Ответить</Button>
+        <Button variant="inline">Переслать</Button>
       </div>
     </div>
   )

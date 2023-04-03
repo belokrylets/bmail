@@ -81,10 +81,37 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
+      .sidebar__new__folder {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        height: 30px;
+        input {
+          height: 100%;
+          max-width: 130px;
+          border: 1px solid $primary-color;
+          padding: 0 5px;
+        }
+        svg {
+          cursor: pointer;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
       .sidebar__item {
         display: flex;
         gap: 10px;
         align-items: center;
+        .sidebar__item__interface {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
         svg {
           color: $secondary-color;
         }
@@ -152,6 +179,15 @@
 
             font-size: 20px;
             font-weight: 600;
+            .current__message__subject__interface {
+              display: flex;
+              gap: 10px;
+              svg {
+                &:hover {
+                  color: $primary-color;
+                }
+              }
+            }
           }
           .current__message__info {
             display: flex;
