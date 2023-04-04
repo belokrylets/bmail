@@ -12,12 +12,14 @@ import { v4 } from "uuid"
 
 const NewMessage = () => {
   const dispatch = useAppDispatch()
+
   const [newMassageState, setNewMassageState] = useState<INewMessage>({
     subject: "",
     email: "",
     body: "",
   })
   const { setNewMessageIsShow } = useContext(Context)
+
   const newMessageHandle = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target
     setNewMassageState((prev) => {
