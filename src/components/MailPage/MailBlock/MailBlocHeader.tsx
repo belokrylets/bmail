@@ -72,6 +72,7 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
   const showMoveListHandle = () => {
     setIsShowMoveList((prev) => !prev)
   }
+
   return (
     <div className="mail__block__header">
       <div className="mail__block__header__interface header__interface">

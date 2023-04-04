@@ -14,9 +14,10 @@ interface MessageItemProps {
 }
 
 const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
+  const dispatch = useAppDispatch()
+
   const { checkboxState, setCheckboxState, setSelectedMessage } =
     useContext(Context)
-  const dispatch = useAppDispatch()
 
   const messageItemHandle = () => {
     setSelectedMessage(message.id)
@@ -63,16 +64,18 @@ const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
       onClick={messageItemHandle}
       className={classNames("message__item", {
         closed: message.status === "new",
-      })}>
+      })}
+    >
       <div onClick={checkboxHandle}>
         <Checkbox isActive={checkboxState.includes(message.id)} />
       </div>
-      <div className='message__item__address'>{message.contact.name}</div>
-      <div className='message__item__message'>{message.messageBody}</div>
-      <div className='message__item__date'>25 марта</div>
+      <div className="message__item__address">{message.contact.name}</div>
+      <div className="message__item__message">{message.messageBody}</div>
+      <div className="message__item__date">25 марта</div>
       <div
         onClick={(e) => e.stopPropagation()}
-        className='message__item__interface'>
+        className="message__item__interface"
+      >
         <div onClick={deleteHandle}>
           <IconDelete />
         </div>

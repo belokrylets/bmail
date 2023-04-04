@@ -11,6 +11,7 @@ import MoveList from "components/UI/MoveList"
 
 const CurrentMessage = () => {
   const dispatch = useAppDispatch()
+
   const { selectedMessage, setSelectedMessage } = useContext(Context)
   const [message, setMessage] = useState<IMessages>({
     id: "",
@@ -24,8 +25,11 @@ const CurrentMessage = () => {
     status: "",
     subject: "",
   } as IMessages)
+
   const allMessages = useAppSelector(messageSelector.selectEntities)
+
   const [isShowMoveList, setIsShowMoveList] = useState(false)
+
   useEffect(() => {
     setMessage({ ...allMessages[selectedMessage]! })
     dispatch(
@@ -54,6 +58,7 @@ const CurrentMessage = () => {
   const showMoveListHandle = () => {
     setIsShowMoveList((prev) => !prev)
   }
+
   return (
     <div className="current__message">
       <div className="current__message__subject">

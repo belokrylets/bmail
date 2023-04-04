@@ -17,11 +17,11 @@ const MailPage = () => {
   const [activeFolder, setActiveFolder] = useState<string>(
     "e2545fe2-0f42-4073-afd8-0cce07476d41"
   )
-
   const [checkboxState, setCheckboxState] = useState<string[]>([])
   const [searchState, setSearchState] = useState("")
   const [newMessageIsShow, setNewMessageIsShow] = useState<boolean>(false)
   const [selectedMessage, setSelectedMessage] = useState("")
+
   return (
     <Context.Provider
       value={{
@@ -35,10 +35,11 @@ const MailPage = () => {
         setNewMessageIsShow,
         selectedMessage,
         setSelectedMessage,
-      }}>
-      <main className='mail__page'>
-        <div className='container'>
-          <div className='mail__page__content'>
+      }}
+    >
+      <main className="mail__page">
+        <div className="container">
+          <div className="mail__page__content">
             <Sidebar />
             <MailBlock />
           </div>

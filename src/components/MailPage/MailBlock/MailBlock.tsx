@@ -9,8 +9,10 @@ import NewMessage from "./NewMessage"
 
 const MailBlock = () => {
   const { activeFolder, searchState, newMessageIsShow } = useContext(Context)
+
   const allMessage = useAppSelector(messageSelector.selectAll)
   const folders = useAppSelector(foldersSelector.selectEntities)
+
   const filteredMessage = allMessage
     .filter((message) => message.folder === folders[activeFolder]?.slug)
     .filter((message) =>
@@ -18,8 +20,9 @@ const MailBlock = () => {
         .toLocaleLowerCase()
         .includes(searchState.toLocaleLowerCase())
     )
+
   return (
-    <div className='mail__block'>
+    <div className="mail__block">
       <MailBlocHeader messagesList={filteredMessage} />
       <MailBlockBody messagesList={filteredMessage} />
       {newMessageIsShow && <NewMessage />}

@@ -88,6 +88,7 @@ const Sidebar = () => {
     setChangeFolder(id)
     setNewFolder(FolderEntities[id]!.title)
   }
+
   return (
     <aside className="sidebar">
       <div className="sidebar__new__message">

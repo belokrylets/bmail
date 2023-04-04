@@ -10,6 +10,7 @@ interface MailBlockBodyProps {
 
 const MailBlockBody: React.FC<MailBlockBodyProps> = ({ messagesList }) => {
   const { selectedMessage } = useContext(Context)
+
   return (
     <div className="mail__block__body">
       {!!selectedMessage ? (
