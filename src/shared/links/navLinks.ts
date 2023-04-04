@@ -3,8 +3,4 @@ export const navLinks = {
     path: "/",
     title: "почта",
   },
-  project: {
-    path: "/about",
-    title: "о проекте",
-  },
 }

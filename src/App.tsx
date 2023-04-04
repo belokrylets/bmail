@@ -2,7 +2,7 @@ import MailPage from "components/MailPage/MailPage"
 import Footer from "components/UI/Footer"
 import Navbar from "components/UI/Navbar"
 import React from "react"
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { navLinks } from "shared/links/navLinks"
 
 const App = () => {
@@ -11,7 +11,6 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path={navLinks.mail.path} element={<MailPage />} />
-        <Route path={navLinks.project.path} element={<div>О проекте</div>} />
       </Routes>
 
       <Footer />

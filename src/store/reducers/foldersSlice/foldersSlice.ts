@@ -1,8 +1,4 @@
-import {
-  createSlice,
-  createEntityAdapter,
-  PayloadAction,
-} from "@reduxjs/toolkit"
+import { createSlice, createEntityAdapter } from "@reduxjs/toolkit"
 import { RootState } from "store/store"
 import { IFolders } from "./foldersSlice.modal"
 
