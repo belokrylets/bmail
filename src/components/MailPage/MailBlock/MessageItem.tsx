@@ -5,6 +5,7 @@ import classNames from "classnames"
 import Checkbox from "components/UI/Checkbox"
 import { useAppDispatch } from "hooks/redux"
 import React, { useContext } from "react"
+import getDate from "shared/utils/getDate"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import { actions as messageActions } from "store/reducers/messagesSlice/messagesSlice"
 import { Context } from "../MailPage"
@@ -71,7 +72,7 @@ const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
       </div>
       <div className="message__item__address">{message.contact.name}</div>
       <div className="message__item__message">{message.messageBody}</div>
-      <div className="message__item__date">25 марта</div>
+      <div className="message__item__date">{getDate(message.date)}</div>
       <div
         onClick={(e) => e.stopPropagation()}
         className="message__item__interface"
