@@ -8,14 +8,7 @@ import IconSent from "assets/icons/IconSent"
 import IconSuccess from "assets/icons/IconSuccess"
 import classNames from "classnames"
 import Button from "components/UI/Button"
-import { useAppDispatch, useAppSelector } from "hooks/redux"
-import React, { useContext, useState } from "react"
-import {
-  actions as folderActions,
-  foldersSelector,
-} from "store/reducers/foldersSlice/foldersSlice"
-import { v4 } from "uuid"
-import { Context } from "./MailPage"
+import useSidebar from "hooks/useSidebar"
 
 const iconsMapping: { [key: string]: JSX.Element } = {
   incoming: <IconIncoming />,
@@ -26,68 +19,19 @@ const iconsMapping: { [key: string]: JSX.Element } = {
 }
 
 const Sidebar = () => {
-  const dispatch = useAppDispatch()
-
-  const [isChangeMode, setIsChangeMode] = useState(false)
-  const [newFolder, setNewFolder] = useState("")
-  const [changeFolder, setChangeFolder] = useState("")
-
   const {
     activeFolder,
-    setActiveFolder,
-    setCheckboxState,
-    setNewMessageIsShow,
-    setSelectedMessage,
-  } = useContext(Context)
-
-  const allFolder = useAppSelector(foldersSelector.selectAll)
-  const FolderEntities = useAppSelector(foldersSelector.selectEntities)
-
-  const activeFolderHandle = (id: string) => {
-    setActiveFolder(id)
-    setCheckboxState([])
-    setSelectedMessage("")
-  }
-
-  const buttonHandle = () => {
-    setNewMessageIsShow(true)
-  }
-
-  const changeHandle = () => {
-    setIsChangeMode((prev) => !prev)
-  }
-
-  const newFolderHandle = (e: { target: { value: string } }) => {
-    setNewFolder(e.target.value)
-  }
-  const deleteFolderHandle = (id: string) => {
-    dispatch(folderActions.removeFolder(id))
-  }
-  const successHandle = () => {
-    if (!!changeFolder) {
-      dispatch(
-        folderActions.updateFolder({
-          id: changeFolder,
-          changes: { ...FolderEntities[changeFolder]!, title: newFolder },
-        })
-      )
-    } else {
-      dispatch(
-        folderActions.newFolder({
-          id: v4(),
-          slug: "other",
-          title: newFolder,
-        })
-      )
-    }
-    setChangeFolder("")
-    setNewFolder("")
-  }
-
-  const changeFolderHandle = (id: string) => {
-    setChangeFolder(id)
-    setNewFolder(FolderEntities[id]!.title)
-  }
+    activeFolderHandle,
+    allFolder,
+    buttonHandle,
+    changeFolderHandle,
+    changeHandle,
+    deleteFolderHandle,
+    isChangeMode,
+    newFolderHandle,
+    successHandle,
+    newFolder,
+  } = useSidebar()
 
   return (
     <aside className='sidebar'>

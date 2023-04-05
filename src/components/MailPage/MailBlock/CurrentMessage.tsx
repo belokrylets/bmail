@@ -1,64 +1,18 @@
 import Button from "components/UI/Button"
-import React, { useContext, useEffect, useState } from "react"
-import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import { Context } from "../MailPage"
-import { useAppDispatch, useAppSelector } from "hooks/redux"
-import { messageSelector } from "store/reducers/messagesSlice/messagesSlice"
-import { actions as messageActions } from "store/reducers/messagesSlice/messagesSlice"
+import React from "react"
 import IconDelete from "assets/icons/IconDelete"
 import IconFolder from "assets/icons/IconFolder"
 import MoveList from "components/UI/MoveList"
+import useCurrentMessage from "hooks/useCurrentMessage"
 
 const CurrentMessage = () => {
-  const dispatch = useAppDispatch()
-
-  const { selectedMessage, setSelectedMessage } = useContext(Context)
-  const [message, setMessage] = useState<IMessages>({
-    id: "",
-    contact: {
-      email: "",
-      name: "",
-    },
-    date: "",
-    folder: "",
-    messageBody: "",
-    status: "",
-    subject: "",
-  } as IMessages)
-
-  const allMessages = useAppSelector(messageSelector.selectEntities)
-
-  const [isShowMoveList, setIsShowMoveList] = useState(false)
-
-  useEffect(() => {
-    setMessage({ ...allMessages[selectedMessage]! })
-    dispatch(
-      messageActions.updateMessage({
-        id: selectedMessage,
-        changes: { ...allMessages[selectedMessage]!, status: "read" },
-      })
-    )
-  }, [])
-
-  const deleteHandle = () => {
-    if (message.folder !== "cart") {
-      const updatedMessage: IMessages = { ...message, folder: "cart" }
-      dispatch(
-        messageActions.updateMessage({
-          id: message.id,
-          changes: updatedMessage,
-        })
-      )
-    } else {
-      dispatch(messageActions.removeMessage(message.id))
-    }
-    setSelectedMessage("")
-  }
-
-  const showMoveListHandle = () => {
-    setIsShowMoveList((prev) => !prev)
-  }
-
+  const {
+    deleteHandle,
+    showMoveListHandle,
+    message,
+    selectedMessage,
+    isShowMoveList,
+  } = useCurrentMessage()
   return (
     <div className='current-message'>
       <div className='current-message__subject'>

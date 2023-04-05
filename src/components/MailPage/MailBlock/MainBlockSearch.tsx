@@ -1,14 +1,9 @@
 import React, { useContext } from "react"
 import { Context } from "../MailPage"
+import useMainBlockSearch from "hooks/useMainBlockSearch"
 
 const MainBlockSearch = () => {
-  const { searchState, setSearchState } = useContext(Context)
-
-  const inputHandle = (e: { target: { value: string } }) => {
-    const { value } = e.target
-    setSearchState(value)
-  }
-
+  const { inputHandle, searchState } = useMainBlockSearch()
   return (
     <input
       onChange={inputHandle}

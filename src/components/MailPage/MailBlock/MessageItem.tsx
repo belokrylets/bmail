@@ -3,62 +3,23 @@ import IconDelete from "assets/icons/IconDelete"
 import IconOpen from "assets/icons/IconOpen"
 import classNames from "classnames"
 import Checkbox from "components/UI/Checkbox"
-import { useAppDispatch } from "hooks/redux"
-import React, { useContext } from "react"
+import React from "react"
 import getDate from "shared/utils/getDate"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import { actions as messageActions } from "store/reducers/messagesSlice/messagesSlice"
-import { Context } from "../MailPage"
+import useMessageItem from "hooks/useMessageItem"
 
 interface MessageItemProps {
   message: IMessages
 }
 
 const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
-  const dispatch = useAppDispatch()
-
-  const { checkboxState, setCheckboxState, setSelectedMessage } =
-    useContext(Context)
-
-  const messageItemHandle = () => {
-    setSelectedMessage(message.id)
-  }
-
-  const deleteHandle = () => {
-    if (message.folder !== "cart") {
-      const updatedMessage: IMessages = { ...message, folder: "cart" }
-      dispatch(
-        messageActions.updateMessage({
-          id: message.id,
-          changes: updatedMessage,
-        })
-      )
-    } else {
-      dispatch(messageActions.removeMessage(message.id))
-    }
-  }
-
-  const messageStatusHandle = () => {
-    const newStatus = message.status === "new" ? "read" : "new"
-    const updatedMessage: IMessages = { ...message, status: newStatus }
-
-    dispatch(
-      messageActions.updateMessage({
-        id: message.id,
-        changes: updatedMessage,
-      })
-    )
-  }
-
-  const checkboxHandle = (e: { stopPropagation: () => void }) => {
-    e.stopPropagation()
-    setCheckboxState((prev) => {
-      if (prev.includes(message.id)) {
-        return prev.filter((id) => id !== message.id)
-      }
-      return [...prev, message.id]
-    })
-  }
+  const {
+    checkboxHandle,
+    messageStatusHandle,
+    deleteHandle,
+    messageItemHandle,
+    checkboxState,
+  } = useMessageItem(message)
 
   return (
     <div

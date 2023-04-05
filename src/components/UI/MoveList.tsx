@@ -1,3 +1,4 @@
+import useMoveList from "hooks/UIHooks/useMoveList"
 import { useAppDispatch, useAppSelector } from "hooks/redux"
 import React from "react"
 import { foldersSelector } from "store/reducers/foldersSlice/foldersSlice"
@@ -11,23 +12,8 @@ interface MoveListProps {
 }
 
 const MoveList: React.FC<MoveListProps> = ({ ids }) => {
-  const dispatch = useAppDispatch()
+  const { allFolders, moveHandle } = useMoveList(ids)
 
-  const allFolders = useAppSelector(foldersSelector.selectAll)
-  const folders = useAppSelector(foldersSelector.selectEntities)
-  const allMessages = useAppSelector(messageSelector.selectEntities)
-
-  const moveHandle = (folder: string) => {
-    const updatedMessages = ids.map((id) => {
-      const currentMessage = allMessages[id]!
-      return {
-        id,
-        changes: { ...currentMessage, folder: folders[folder]!.slug },
-      }
-    })
-
-    dispatch(messagesActions.updateMessages(updatedMessages))
-  }
   return (
     <div className='move-folder-list'>
       {allFolders.map((folder) => (

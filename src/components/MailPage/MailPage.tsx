@@ -1,41 +1,16 @@
-import { useAppDispatch } from "hooks/redux"
-import React, { createContext, useEffect, useState } from "react"
+import React, { createContext } from "react"
 import { IMailPageContext } from "shared/modals/mailPage.modal"
-import { fetchAllMessages } from "store/reducers/messagesSlice/actions"
 import MailBlock from "./MailBlock/MailBlock"
 import Sidebar from "./Sidebar"
+import useMailPage from "hooks/useMailPage"
 
 export const Context = createContext<IMailPageContext>({} as IMailPageContext)
 
 const MailPage = () => {
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(fetchAllMessages())
-  }, [])
-
-  const [activeFolder, setActiveFolder] = useState<string>(
-    "e2545fe2-0f42-4073-afd8-0cce07476d41"
-  )
-  const [checkboxState, setCheckboxState] = useState<string[]>([])
-  const [searchState, setSearchState] = useState("")
-  const [newMessageIsShow, setNewMessageIsShow] = useState<boolean>(false)
-  const [selectedMessage, setSelectedMessage] = useState("")
+  const mailStates = useMailPage()
 
   return (
-    <Context.Provider
-      value={{
-        activeFolder,
-        setActiveFolder,
-        checkboxState,
-        setCheckboxState,
-        searchState,
-        setSearchState,
-        newMessageIsShow,
-        setNewMessageIsShow,
-        selectedMessage,
-        setSelectedMessage,
-      }}>
+    <Context.Provider value={mailStates}>
       <main className='mail-page '>
         <div className='container'>
           <div className='mail-page__content'>
