@@ -43,7 +43,7 @@ const getTranslit = (text: string): string => {
   let result = ""
   const textLower = text.toLowerCase()
   for (const symbol of textLower) {
-    if (/[а-я]/i.test(symbol)) {
+    if (/[а-я\s]/i.test(symbol)) {
       result += converter[symbol]
     } else {
       result += symbol
