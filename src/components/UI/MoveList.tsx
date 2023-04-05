@@ -1,11 +1,5 @@
 import useMoveList from "hooks/UIHooks/useMoveList"
-import { useAppDispatch, useAppSelector } from "hooks/redux"
 import React from "react"
-import { foldersSelector } from "store/reducers/foldersSlice/foldersSlice"
-import {
-  actions as messagesActions,
-  messageSelector,
-} from "store/reducers/messagesSlice/messagesSlice"
 
 interface MoveListProps {
   ids: string[]

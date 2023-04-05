@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "./redux"
 import { Context } from "components/MailPage/MailPage"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"

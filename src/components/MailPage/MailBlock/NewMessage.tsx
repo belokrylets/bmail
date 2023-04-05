@@ -2,13 +2,6 @@ import IconCloseNewMessage from "assets/icons/IconCloseNewMessage"
 import Button from "components/UI/Button"
 import NewMessageInput from "components/UI/NewMessageInput"
 import NewMessageTextarea from "components/UI/NewMessageTextarea"
-import React, { useContext, useState } from "react"
-import { INewMessage } from "shared/modals/mailPage.modal"
-import { Context } from "../MailPage"
-import { useAppDispatch } from "hooks/redux"
-import { actions as messagesActions } from "store/reducers/messagesSlice/messagesSlice"
-import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import { v4 } from "uuid"
 import useNewMessage from "hooks/useNewMessage"
 
 const NewMessage = () => {

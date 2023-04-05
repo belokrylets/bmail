@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import { useContext, useState } from "react"
 import { INewMessage } from "shared/modals/mailPage.modal"
 import { useAppDispatch } from "hooks/redux"
 import { actions as messagesActions } from "store/reducers/messagesSlice/messagesSlice"

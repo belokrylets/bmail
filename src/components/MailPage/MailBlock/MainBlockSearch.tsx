@@ -1,5 +1,4 @@
-import React, { useContext } from "react"
-import { Context } from "../MailPage"
+import React from "react"
 import useMainBlockSearch from "hooks/useMainBlockSearch"
 
 const MainBlockSearch = () => {

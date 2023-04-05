@@ -1,6 +1,5 @@
-import React, { useContext } from "react"
+import React from "react"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import { Context } from "../MailPage"
 import CurrentMessage from "./CurrentMessage"
 import MessageItem from "./MessageItem"
 import useMailBlockBody from "hooks/useMailBlockBody"

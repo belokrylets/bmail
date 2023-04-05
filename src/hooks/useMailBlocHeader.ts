@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import { useContext, useState } from "react"
 import { useAppDispatch, useAppSelector } from "./redux"
 import { Context } from "components/MailPage/MailPage"
 import { foldersSelector } from "store/reducers/foldersSlice/foldersSlice"
