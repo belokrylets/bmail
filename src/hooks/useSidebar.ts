@@ -6,6 +6,7 @@ import {
   foldersSelector,
 } from "store/reducers/foldersSlice/foldersSlice"
 import { v4 } from "uuid"
+import getTranslit from "shared/utils/getTranslit"
 
 const useSidebar = () => {
   const dispatch = useAppDispatch()
@@ -50,14 +51,18 @@ const useSidebar = () => {
       dispatch(
         folderActions.updateFolder({
           id: changeFolder,
-          changes: { ...FolderEntities[changeFolder]!, title: newFolder },
+          changes: {
+            ...FolderEntities[changeFolder]!,
+            title: newFolder,
+            slug: getTranslit(newFolder),
+          },
         })
       )
     } else {
       dispatch(
         folderActions.newFolder({
           id: v4(),
-          slug: "other",
+          slug: getTranslit(newFolder),
           title: newFolder,
         })
       )

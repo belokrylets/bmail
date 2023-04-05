@@ -18,7 +18,7 @@ const MoveList: React.FC<MoveListProps> = ({ ids }) => {
     <div className='move-folder-list'>
       {allFolders.map((folder) => (
         <div
-          onClick={() => moveHandle(folder.id)}
+          onClick={() => moveHandle(folder.slug)}
           key={folder.id}
           className='move-folder-list__item'>
           {folder.title}

@@ -18,7 +18,7 @@ const useMoveList = (ids: string[]) => {
       const currentMessage = allMessages[id]!
       return {
         id,
-        changes: { ...currentMessage, folder: folders[folder]!.slug },
+        changes: { ...currentMessage, folder },
       }
     })
 
