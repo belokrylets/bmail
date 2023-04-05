@@ -6,8 +6,8 @@ interface CheckboxProps {
 
 const Checkbox: React.FC<CheckboxProps> = ({ isActive }) => {
   return (
-    <div className="checkbox__wrapper">
-      {isActive && <div className="active" />}
+    <div className='checkbox'>
+      {isActive && <div className='checkbox_active' />}
     </div>
   )
 }

@@ -19,7 +19,7 @@ const NewMessageInput: React.FC<NewMessageInputProps> = ({
   newMessageHandle,
 }) => {
   return (
-    <div className='new__message__input'>
+    <div className='new-message-input'>
       <input
         placeholder={placeholder}
         value={value}

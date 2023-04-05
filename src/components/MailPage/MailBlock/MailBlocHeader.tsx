@@ -74,10 +74,10 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
   }
 
   return (
-    <div className="mail__block__header">
-      <div className="mail__block__header__interface header__interface">
+    <div className='mail-block-header'>
+      <div className='mail-block-header-interface header-interface'>
         {!!selectedMessage ? (
-          <div onClick={backHandle} className="header__interface__menu">
+          <div onClick={backHandle} className='header-interface__menu'>
             <IconBack />
           </div>
         ) : (
@@ -91,14 +91,14 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
           </div>
         )}
         {!!checkboxState.length && (
-          <div className="header__interface__menu">
+          <div className='header-interface__menu'>
             <div onClick={readMessagesHandle}>
               <IconOpen />
             </div>
             <div onClick={deleteHandle}>
               <IconDelete />
             </div>
-            <div onClick={showMoveListHandle} className="folder__icon">
+            <div onClick={showMoveListHandle} className='folder-icon'>
               <IconFolder />
               {isShowMoveList && <MoveList ids={checkboxState} />}
             </div>

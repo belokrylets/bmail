@@ -19,7 +19,7 @@ const NewMessageTextarea: React.FC<NewMessageTextareaProps> = ({
   newMessageHandle,
 }) => {
   return (
-    <div className='new__message__textarea'>
+    <div className='new-message-textarea'>
       <textarea
         placeholder={placeholder}
         value={value}

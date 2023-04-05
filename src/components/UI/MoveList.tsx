@@ -29,13 +29,12 @@ const MoveList: React.FC<MoveListProps> = ({ ids }) => {
     dispatch(messagesActions.updateMessages(updatedMessages))
   }
   return (
-    <div className="move__folder__list">
+    <div className='move-folder-list'>
       {allFolders.map((folder) => (
         <div
           onClick={() => moveHandle(folder.id)}
           key={folder.id}
-          className="move__folder__item"
-        >
+          className='move-folder-list__item'>
           {folder.title}
         </div>
       ))}

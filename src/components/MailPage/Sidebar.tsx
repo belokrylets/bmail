@@ -90,9 +90,9 @@ const Sidebar = () => {
   }
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar__new__message">
-        <Button onClick={buttonHandle} width="full">
+    <aside className='sidebar'>
+      <div className='sidebar__new-message'>
+        <Button onClick={buttonHandle} width='full'>
           <IconNewMessage /> Написать
         </Button>
       </div>
@@ -104,12 +104,11 @@ const Sidebar = () => {
           key={folder.id}
           className={classNames("sidebar__item", {
             active: folder.id === activeFolder,
-          })}
-        >
+          })}>
           {iconsMapping[folder.slug]}
           {folder.title}
           {folder.slug === "other" && isChangeMode && (
-            <div className="sidebar__item__interface">
+            <div className='sidebar__item-interface'>
               <span onClick={() => changeFolderHandle(folder.id)}>
                 <IconPen />
               </span>
@@ -122,10 +121,10 @@ const Sidebar = () => {
       ))}
 
       {isChangeMode && (
-        <div className="sidebar__new__folder">
+        <div className='sidebar__new-folder'>
           <input
-            placeholder="Название папки"
-            type="folder"
+            placeholder='Название папки'
+            type='folder'
             value={newFolder}
             onChange={newFolderHandle}
           />
@@ -134,7 +133,7 @@ const Sidebar = () => {
           </div>
         </div>
       )}
-      <Button onClick={changeHandle} variant={"inline"} width="full">
+      <Button onClick={changeHandle} variant={"inline"} width='full'>
         {isChangeMode ? "Сохранить" : "Изменить"}
       </Button>
     </aside>

@@ -12,10 +12,10 @@ const MainBlockSearch = () => {
   return (
     <input
       onChange={inputHandle}
-      name="search"
-      placeholder="Поиск по имени"
+      name='search'
+      placeholder='Поиск по имени'
       value={searchState}
-      className="mail__block__header__search"
+      className='mail-block-header__search'
     />
   )
 }

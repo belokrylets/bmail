@@ -5,22 +5,20 @@ import { navLinks } from "shared/links/navLinks"
 
 const Navbar = () => {
   return (
-    <header>
-      <div className="container">
-        <div className="header__content">
-          <div className="header__logo">
-            <IconLogo />
-          </div>
-          <nav className="header__menu menu">
-            <ul className="menu__list">
-              {Object.values(navLinks).map((link) => (
-                <li key={link.title} className="menu__item">
-                  <Link to={link.path}>{link.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+    <header className='header '>
+      <div className='header__content container'>
+        <div className='header-logo'>
+          <IconLogo />
         </div>
+        <nav className='header-menu menu'>
+          <ul className='menu__list'>
+            {Object.values(navLinks).map((link) => (
+              <li key={link.title} className='menu__item'>
+                <Link to={link.path}>{link.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   )

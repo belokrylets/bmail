@@ -35,11 +35,10 @@ const MailPage = () => {
         setNewMessageIsShow,
         selectedMessage,
         setSelectedMessage,
-      }}
-    >
-      <main className="mail__page">
-        <div className="container">
-          <div className="mail__page__content">
+      }}>
+      <main className='mail-page '>
+        <div className='container'>
+          <div className='mail-page__content'>
             <Sidebar />
             <MailBlock />
           </div>

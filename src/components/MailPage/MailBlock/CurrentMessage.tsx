@@ -60,24 +60,24 @@ const CurrentMessage = () => {
   }
 
   return (
-    <div className="current__message">
-      <div className="current__message__subject">
+    <div className='current-message'>
+      <div className='current-message__subject'>
         {!!message.subject ? message.subject : "(без темы)"}
-        <div className="current__message__subject__interface">
+        <div className='current-message__subject-interface'>
           <div onClick={deleteHandle}>
             <IconDelete />
           </div>
-          <div onClick={showMoveListHandle} className="folder__icon">
+          <div onClick={showMoveListHandle} className='folder-icon'>
             <IconFolder />
             {isShowMoveList && <MoveList ids={[selectedMessage]} />}
           </div>
         </div>
       </div>
-      <div className="current__message__info">{message.contact.email}</div>
-      <div className="current__message__body">{message.messageBody}</div>
-      <div className="current__message__buttons">
-        <Button variant="inline">Ответить</Button>
-        <Button variant="inline">Переслать</Button>
+      <div className='current-message__info'>{message.contact.email}</div>
+      <div className='current-message__body'>{message.messageBody}</div>
+      <div className='current-message__buttons'>
+        <Button variant='inline'>Ответить</Button>
+        <Button variant='inline'>Переслать</Button>
       </div>
     </div>
   )

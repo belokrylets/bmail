@@ -63,20 +63,18 @@ const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
   return (
     <div
       onClick={messageItemHandle}
-      className={classNames("message__item", {
-        closed: message.status === "new",
-      })}
-    >
+      className={classNames("message-item", {
+        "message-item_closed": message.status === "new",
+      })}>
       <div onClick={checkboxHandle}>
         <Checkbox isActive={checkboxState.includes(message.id)} />
       </div>
-      <div className="message__item__address">{message.contact.name}</div>
-      <div className="message__item__message">{message.messageBody}</div>
-      <div className="message__item__date">{getDate(message.date)}</div>
+      <div className='message-item__address'>{message.contact.name}</div>
+      <div className='message-item__message'>{message.messageBody}</div>
+      <div className='message-item__date'>{getDate(message.date)}</div>
       <div
         onClick={(e) => e.stopPropagation()}
-        className="message__item__interface"
-      >
+        className='message-item__interface'>
         <div onClick={deleteHandle}>
           <IconDelete />
         </div>

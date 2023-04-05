@@ -12,11 +12,11 @@ const MailBlockBody: React.FC<MailBlockBodyProps> = ({ messagesList }) => {
   const { selectedMessage } = useContext(Context)
 
   return (
-    <div className="mail__block__body">
+    <div className='mail-block-body'>
       {!!selectedMessage ? (
         <CurrentMessage />
       ) : (
-        <div className="messages__list">
+        <div className='messages-list'>
           {messagesList.map((message) => (
             <MessageItem key={message.id} message={message} />
           ))}

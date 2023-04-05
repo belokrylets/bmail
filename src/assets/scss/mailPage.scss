@@ -1,9 +1,9 @@
 @import "_variables.scss";
 
-.mail__page {
+.mail-page {
   position: relative;
 
-  .new__message {
+  .new-message {
     position: absolute;
     bottom: 0;
 
@@ -22,7 +22,7 @@
     box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
       0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
 
-    .new__message__header {
+    .new-message__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -35,13 +35,13 @@
       border-radius: 8px 8px 0 0;
       padding: 0 20px;
 
-      .new__message__header__icons {
+      .new-message__header-icons {
         display: flex;
         gap: 10px;
         cursor: pointer;
       }
     }
-    .new__message__input {
+    .new-message-input {
       border-bottom: 1px solid $secondary-color;
       height: 35px;
 
@@ -54,12 +54,12 @@
         width: 100%;
       }
     }
-    .new__message__button__group {
+    .new-message__button-group {
       padding: 0 20px;
       display: flex;
       gap: 20px;
     }
-    .new__message__textarea {
+    .new-message-textarea {
       border-bottom: 1px solid $secondary-color;
 
       margin: 0 20px 20px 20px;
@@ -72,7 +72,7 @@
       }
     }
   }
-  .mail__page__content {
+  .mail-page__content {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
@@ -81,7 +81,7 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
-      .sidebar__new__folder {
+      .sidebar__new-folder {
         display: flex;
         gap: 10px;
         align-items: center;
@@ -106,7 +106,7 @@
         display: flex;
         gap: 10px;
         align-items: center;
-        .sidebar__item__interface {
+        .sidebar__item-interface {
           margin-left: auto;
           display: flex;
           align-items: center;
@@ -124,25 +124,25 @@
         }
       }
     }
-    .mail__block {
+    .mail-block {
       box-shadow: 0 2px 16px rgb(57 57 61 / 11%);
       width: 100%;
       border-radius: 15px;
       padding: 20px 0;
 
-      .mail__block__header {
+      .mail-block-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         padding: 0 20px 10px 20px;
 
-        .mail__block__header__interface,
-        .header__interface {
+        .mail-block-header-interface,
+        .header-interface {
           display: flex;
           gap: 40px;
 
-          .header__interface__menu {
+          .header-interface__menu {
             display: flex;
             gap: 15px;
 
@@ -155,31 +155,31 @@
             }
           }
         }
-        .mail__block__header__search {
+        .mail-block-header__search {
           border: none;
           background-color: rgb(247, 247, 247);
           padding: 5px 10px;
         }
       }
-      .mail__block__body {
+      .mail-block-body {
         border-top: 1px solid $secondary-color;
         overflow: auto;
 
         height: 100%;
 
-        .current__message {
+        .current-message {
           padding: 20px 20px 0 20px;
           display: flex;
           flex-direction: column;
           gap: 10px;
-          .current__message__subject {
+          .current-message__subject {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             font-size: 20px;
             font-weight: 600;
-            .current__message__subject__interface {
+            .current-message__subject-interface {
               display: flex;
               gap: 10px;
               svg {
@@ -189,25 +189,25 @@
               }
             }
           }
-          .current__message__info {
+          .current-message__info {
             display: flex;
             flex-direction: column;
             gap: 5px;
           }
-          .current__message__body {
+          .current-message__body {
             border-bottom: 1px solid $secondary-color;
             padding: 20px 0;
             min-height: 300px;
           }
-          .current__message__buttons {
+          .current-message__buttons {
             display: flex;
             justify-content: flex-start;
             gap: 20px;
           }
         }
 
-        .messages__list {
-          .message__item {
+        .messages-list {
+          .message-item {
             padding: 0 20px;
             display: grid;
             grid-template-columns: 20px 200px 1fr auto;
@@ -219,24 +219,24 @@
             &:last-child {
               border: none;
             }
-            &.closed {
+            &.message-item_closed {
               font-weight: 600;
             }
-            .message__item__address,
-            .message__item__message {
+            .message-item__address,
+            .message-item__message {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
             }
-            .message__item__interface {
+            .message-item__interface {
               display: none;
             }
             &:hover {
               background-color: rgb(241, 241, 241);
-              .message__item__date {
+              .message-item__date {
                 display: none;
               }
-              .message__item__interface {
+              .message-item__interface {
                 display: flex;
                 gap: 20px;
                 svg {

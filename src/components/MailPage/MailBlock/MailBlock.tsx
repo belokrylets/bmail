@@ -22,7 +22,7 @@ const MailBlock = () => {
     )
 
   return (
-    <div className="mail__block">
+    <div className='mail-block'>
       <MailBlocHeader messagesList={filteredMessage} />
       <MailBlockBody messagesList={filteredMessage} />
       {newMessageIsShow && <NewMessage />}
