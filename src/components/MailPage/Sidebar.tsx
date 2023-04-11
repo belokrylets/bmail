@@ -71,8 +71,8 @@ const Sidebar = () => {
           <input
             placeholder='Название папки'
             type='folder'
-            value={newFolder}
-            onChange={newFolderHandle}
+            value={newFolderHandle.value}
+            onChange={newFolderHandle.onChange}
           />
           <IconBtn onClick={successHandle} type='success' />
         </div>

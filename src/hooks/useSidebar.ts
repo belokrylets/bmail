@@ -7,13 +7,15 @@ import {
 } from "store/reducers/foldersSlice/foldersSlice"
 import { v4 } from "uuid"
 import getTranslit from "shared/utils/getTranslit"
+import useInput from "./UIHooks/useInput"
+import { newFolderValid } from "shared/validations/validations"
 
 const useSidebar = () => {
   const dispatch = useAppDispatch()
 
   const [isChangeMode, setIsChangeMode] = useState(false)
   const [newFolder, setNewFolder] = useState("")
-  const [changeFolder, setChangeFolder] = useState("")
+  const [changeFolderId, setChangeFolderId] = useState("")
 
   const {
     activeFolder,
@@ -40,21 +42,20 @@ const useSidebar = () => {
     setIsChangeMode((prev) => !prev)
   }
 
-  const newFolderHandle = (e: { target: { value: string } }) => {
-    setNewFolder(e.target.value)
-  }
+  const newFolderHandle = useInput("", newFolderValid)
+
   const deleteFolderHandle = (id: string) => {
     dispatch(folderActions.removeFolder(id))
   }
   const successHandle = () => {
-    if (!!changeFolder) {
+    if (!!changeFolderId) {
       dispatch(
         folderActions.updateFolder({
-          id: changeFolder,
+          id: changeFolderId,
           changes: {
-            ...FolderEntities[changeFolder]!,
-            title: newFolder,
-            slug: getTranslit(newFolder),
+            ...FolderEntities[changeFolderId]!,
+            title: newFolderHandle.value,
+            slug: getTranslit(newFolderHandle.value),
           },
         })
       )
@@ -62,17 +63,17 @@ const useSidebar = () => {
       dispatch(
         folderActions.newFolder({
           id: v4(),
-          slug: getTranslit(newFolder),
-          title: newFolder,
+          slug: getTranslit(newFolderHandle.value),
+          title: newFolderHandle.value,
         })
       )
     }
-    setChangeFolder("")
+    setChangeFolderId("")
     setNewFolder("")
   }
 
   const changeFolderHandle = (id: string) => {
-    setChangeFolder(id)
+    setChangeFolderId(id)
     setNewFolder(FolderEntities[id]!.title)
   }
   return {
