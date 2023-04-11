@@ -62,6 +62,9 @@ button.primary__btn {
 
 div.folder-icon {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   .move-folder-list {
     position: absolute;
@@ -88,4 +91,7 @@ div.folder-icon {
 button.icon-btn {
   border: none;
   background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

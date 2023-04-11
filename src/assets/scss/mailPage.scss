@@ -139,6 +139,7 @@
         .mail-block-header-interface,
         .header-interface {
           display: flex;
+          align-items: center;
           gap: 40px;
 
           .header-interface__menu {
