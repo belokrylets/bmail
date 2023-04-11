@@ -51,7 +51,7 @@ const Sidebar = () => {
             ? iconsMapping[folder.slug]
             : iconsMapping.other}
           {folder.title}
-          {folder.slug === "other" && isChangeMode && (
+          {!iconsMapping[folder.slug] && isChangeMode && (
             <div className='sidebar__item-interface'>
               <IconBtn
                 onClick={() => changeFolderHandle(folder.id)}
