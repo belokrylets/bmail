@@ -40,7 +40,6 @@ const iconMapping = {
 const IconBtn: React.FC<IconBtnProps> = ({ onClick, classes, type }) => {
   return (
     <button
-      // className={`icon-btn ${!!classes ? classes : ""}`}
       className={classNames("icon-btn", { [classes!]: !!classes })}
       onClick={onClick}>
       {iconMapping[type]}
