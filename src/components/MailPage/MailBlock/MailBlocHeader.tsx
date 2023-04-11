@@ -1,13 +1,10 @@
-import IconDelete from "assets/icons/IconDelete"
-import IconFolder from "assets/icons/IconFolder"
-import IconOpen from "assets/icons/IconOpen"
 import Checkbox from "components/UI/Checkbox"
 import React from "react"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import MainBlockSearch from "./MainBlockSearch"
-import IconBack from "assets/icons/IconBack"
 import MoveList from "components/UI/MoveList"
 import useMailBlocHeader from "hooks/useMailBlocHeader"
+import IconBtn from "components/UI/IconBtn"
 
 interface MailBlocHeaderProps {
   messagesList: IMessages[]
@@ -29,9 +26,7 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
     <div className='mail-block-header'>
       <div className='mail-block-header-interface header-interface'>
         {!!selectedMessage ? (
-          <div onClick={backHandle} className='header-interface__menu'>
-            <IconBack />
-          </div>
+          <IconBtn onClick={backHandle} type='back' />
         ) : (
           <div onClick={checkboxHandle}>
             <Checkbox
@@ -44,14 +39,10 @@ const MailBlocHeader: React.FC<MailBlocHeaderProps> = ({ messagesList }) => {
         )}
         {!!checkboxState.length && (
           <div className='header-interface__menu'>
-            <div onClick={readMessagesHandle}>
-              <IconOpen />
-            </div>
-            <div onClick={deleteHandle}>
-              <IconDelete />
-            </div>
-            <div onClick={showMoveListHandle} className='folder-icon'>
-              <IconFolder />
+            <IconBtn onClick={readMessagesHandle} type='open' />
+            <IconBtn onClick={deleteHandle} type='delete' />
+            <div className='folder-icon'>
+              <IconBtn onClick={showMoveListHandle} type='folder' />
               {isShowMoveList && <MoveList ids={checkboxState} />}
             </div>
           </div>

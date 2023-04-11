@@ -1,9 +1,8 @@
 import Button from "components/UI/Button"
 import React from "react"
-import IconDelete from "assets/icons/IconDelete"
-import IconFolder from "assets/icons/IconFolder"
 import MoveList from "components/UI/MoveList"
 import useCurrentMessage from "hooks/useCurrentMessage"
+import IconBtn from "components/UI/IconBtn"
 
 const CurrentMessage = () => {
   const {
@@ -18,11 +17,10 @@ const CurrentMessage = () => {
       <div className='current-message__subject'>
         {!!message.subject ? message.subject : "(без темы)"}
         <div className='current-message__subject-interface'>
-          <div onClick={deleteHandle}>
-            <IconDelete />
-          </div>
-          <div onClick={showMoveListHandle} className='folder-icon'>
-            <IconFolder />
+          <IconBtn onClick={deleteHandle} type='delete' />
+
+          <div className='folder-icon'>
+            <IconBtn onClick={showMoveListHandle} type='folder' />
             {isShowMoveList && <MoveList ids={[selectedMessage]} />}
           </div>
         </div>

@@ -18,14 +18,14 @@ body {
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
   overflow: hidden;
+  gap: 20px;
   min-height: 100%;
 }
 
 main {
-  flex: 1 1 auto;
   padding: 20px 0;
 }
 

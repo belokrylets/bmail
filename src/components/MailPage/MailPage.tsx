@@ -11,12 +11,10 @@ const MailPage = () => {
 
   return (
     <Context.Provider value={mailStates}>
-      <main className='mail-page '>
-        <div className='container'>
-          <div className='mail-page__content'>
-            <Sidebar />
-            <MailBlock />
-          </div>
+      <main className='mail-page container'>
+        <div className='mail-page__content'>
+          <Sidebar />
+          <MailBlock />
         </div>
       </main>
     </Context.Provider>

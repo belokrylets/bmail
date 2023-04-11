@@ -1,5 +1,5 @@
-import IconCloseNewMessage from "assets/icons/IconCloseNewMessage"
 import Button from "components/UI/Button"
+import IconBtn from "components/UI/IconBtn"
 import NewMessageInput from "components/UI/NewMessageInput"
 import NewMessageTextarea from "components/UI/NewMessageTextarea"
 import useNewMessage from "hooks/useNewMessage"
@@ -21,9 +21,11 @@ const NewMessage = () => {
             ? newMassageState.subject
             : "Новое сообщение"}
         </span>
-        <div onClick={buttonCloseHandle} className='new-message__header-icons'>
-          <IconCloseNewMessage />
-        </div>
+        <IconBtn
+          classes='new-message__header-icons'
+          onClick={buttonCloseHandle}
+          type='closeNewMessage'
+        />
       </div>
       <NewMessageInput
         placeholder='Получатель'

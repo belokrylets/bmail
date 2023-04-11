@@ -1,12 +1,10 @@
-import IconClose from "assets/icons/IconClose"
-import IconDelete from "assets/icons/IconDelete"
-import IconOpen from "assets/icons/IconOpen"
 import classNames from "classnames"
 import Checkbox from "components/UI/Checkbox"
 import React from "react"
 import getDate from "shared/utils/getDate"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import useMessageItem from "hooks/useMessageItem"
+import IconBtn from "components/UI/IconBtn"
 
 interface MessageItemProps {
   message: IMessages
@@ -36,12 +34,11 @@ const MessageItem: React.FC<MessageItemProps> = ({ message }) => {
       <div
         onClick={(e) => e.stopPropagation()}
         className='message-item__interface'>
-        <div onClick={deleteHandle}>
-          <IconDelete />
-        </div>
-        <div onClick={messageStatusHandle}>
-          {message.status === "new" ? <IconOpen /> : <IconClose />}
-        </div>
+        <IconBtn onClick={deleteHandle} type='delete' />
+        <IconBtn
+          onClick={messageStatusHandle}
+          type={message.status === "new" ? "open" : "close"}
+        />
       </div>
     </div>
   )
