@@ -1,48 +1,48 @@
 import { useContext, useState } from "react"
-import { INewMessage } from "shared/modals/mailPage.modal"
 import { useAppDispatch } from "hooks/redux"
 import { actions as messagesActions } from "store/reducers/messagesSlice/messagesSlice"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import { v4 } from "uuid"
 import { Context } from "components/MailPage/MailPage"
+import useInput from "./UIHooks/useInput"
+import {
+  emailValid,
+  messagesValid,
+  subjectValid,
+} from "shared/validations/validations"
 
 const useNewMessage = () => {
   const dispatch = useAppDispatch()
 
-  const [newMassageState, setNewMassageState] = useState<INewMessage>({
-    subject: "",
-    email: "",
-    body: "",
-  })
+  const subjectHandle = useInput("", subjectValid)
+  const emailHandle = useInput("", emailValid)
+  const bodyHandle = useInput("", messagesValid)
   const { setNewMessageIsShow } = useContext(Context)
-
-  const newMessageHandle = (e: { target: { name: string; value: string } }) => {
-    const { name, value } = e.target
-    setNewMassageState((prev) => {
-      return { ...prev, [name]: value }
-    })
-  }
 
   const buttonCloseHandle = () => {
     setNewMessageIsShow(false)
-    setNewMassageState({ subject: "", email: "", body: "" })
+    subjectHandle.changeState("")
+    emailHandle.changeState("")
+    bodyHandle.changeState("")
   }
 
   const buttonSentHandle = () => {
     const newMassage: IMessages = {
       id: v4(),
       contact: {
-        email: newMassageState.email,
-        name: newMassageState.email,
+        email: emailHandle.value,
+        name: emailHandle.value,
       },
       date: `${Date.now}`,
-      messageBody: newMassageState.body,
+      messageBody: bodyHandle.value,
       status: "read",
       folder: "sent",
-      subject: newMassageState.subject,
+      subject: subjectHandle.value,
     }
     dispatch(messagesActions.addMessage(newMassage))
-    setNewMassageState({ subject: "", email: "", body: "" })
+    subjectHandle.changeState("")
+    emailHandle.changeState("")
+    bodyHandle.changeState("")
     setNewMessageIsShow(false)
   }
 
@@ -50,17 +50,19 @@ const useNewMessage = () => {
     const newMassage: IMessages = {
       id: v4(),
       contact: {
-        email: newMassageState.email,
-        name: newMassageState.email,
+        email: emailHandle.value,
+        name: emailHandle.value,
       },
       date: `${Date.now}`,
-      messageBody: newMassageState.body,
+      messageBody: bodyHandle.value,
       status: "read",
       folder: "draft",
-      subject: newMassageState.subject,
+      subject: subjectHandle.value,
     }
     dispatch(messagesActions.addMessage(newMassage))
-    setNewMassageState({ subject: "", email: "", body: "" })
+    subjectHandle.changeState("")
+    emailHandle.changeState("")
+    bodyHandle.changeState("")
     setNewMessageIsShow(false)
   }
 
@@ -68,8 +70,9 @@ const useNewMessage = () => {
     buttonDraftHandle,
     buttonSentHandle,
     buttonCloseHandle,
-    newMessageHandle,
-    newMassageState,
+    subjectHandle,
+    emailHandle,
+    bodyHandle,
   }
 }
 

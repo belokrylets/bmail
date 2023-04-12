@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useAppDispatch } from "./redux"
 import { fetchAllMessages } from "store/reducers/messagesSlice/actions"
+import useInput from "./UIHooks/useInput"
 
 const useMailPage = () => {
   const dispatch = useAppDispatch()
@@ -9,24 +10,24 @@ const useMailPage = () => {
     dispatch(fetchAllMessages())
   }, [])
 
-  const [activeFolder, setActiveFolder] = useState<string>(
+  const [activeFolderId, setActiveFolderId] = useState<string>(
     "e2545fe2-0f42-4073-afd8-0cce07476d41"
   )
   const [checkboxState, setCheckboxState] = useState<string[]>([])
-  const [searchState, setSearchState] = useState("")
   const [newMessageIsShow, setNewMessageIsShow] = useState<boolean>(false)
   const [selectedMessage, setSelectedMessage] = useState("")
+
+  const searchHandle = useInput("", null)
   return {
-    activeFolder,
-    setActiveFolder,
+    activeFolderId,
+    setActiveFolderId,
     checkboxState,
     setCheckboxState,
-    searchState,
-    setSearchState,
     newMessageIsShow,
     setNewMessageIsShow,
     selectedMessage,
     setSelectedMessage,
+    searchHandle,
   }
 }
 

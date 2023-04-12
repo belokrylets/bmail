@@ -10,10 +10,15 @@ const useInput = (initialValue: string, validations: IValidations | null) => {
   const onChange = (e: { target: { value: string } }) => {
     setValue(e.target.value)
   }
+
+  const changeState = (newValue: string) => {
+    setValue(newValue)
+  }
   return {
     value,
     onChange,
     valid,
+    changeState,
   }
 }
 

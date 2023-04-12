@@ -18,7 +18,7 @@ const iconsMapping: { [key: string]: JSX.Element } = {
 
 const Sidebar = () => {
   const {
-    activeFolder,
+    activeFolderId,
     activeFolderHandle,
     allFolder,
     buttonHandle,
@@ -28,7 +28,6 @@ const Sidebar = () => {
     isChangeMode,
     newFolderHandle,
     successHandle,
-    newFolder,
   } = useSidebar()
 
   return (
@@ -45,7 +44,7 @@ const Sidebar = () => {
           }}
           key={folder.id}
           className={classNames("sidebar__item", {
-            active: folder.id === activeFolder,
+            active: folder.id === activeFolderId,
           })}>
           {iconsMapping[folder.slug]
             ? iconsMapping[folder.slug]

@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react"
 import { IValidations } from "shared/modals/validation.modal"
 
-interface IEmpty {
+export interface IEmpty {
   isEmpty: boolean
   messageError: string
 }
-interface IMinLength {
+export interface IMinLength {
   minLengthError: boolean
   messageError: string
 }
-interface IMaxLength {
+export interface IMaxLength {
   maxLengthError: boolean
   messageError: string
 }
-interface IEmail {
+export interface IEmail {
   emailError: boolean
   messageError: string
 }

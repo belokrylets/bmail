@@ -8,18 +8,17 @@ const NewMessage = () => {
   const {
     buttonDraftHandle,
     buttonSentHandle,
+    subjectHandle,
+    emailHandle,
+    bodyHandle,
     buttonCloseHandle,
-    newMessageHandle,
-    newMassageState,
   } = useNewMessage()
 
   return (
     <div className='new-message'>
       <div className='new-message__header'>
         <span>
-          {!!newMassageState.subject
-            ? newMassageState.subject
-            : "Новое сообщение"}
+          {!!subjectHandle.value ? subjectHandle.value : "Новое сообщение"}
         </span>
         <IconBtn
           classes='new-message__header-icons'
@@ -29,31 +28,29 @@ const NewMessage = () => {
       </div>
       <NewMessageInput
         placeholder='Получатель'
-        value={newMassageState.email}
+        value={emailHandle.value}
         name='email'
-        newMessageHandle={newMessageHandle}
+        newMessageHandle={emailHandle.onChange}
       />
       <NewMessageInput
         placeholder='Тема'
-        value={newMassageState.subject}
+        value={subjectHandle.value}
         name='subject'
-        newMessageHandle={newMessageHandle}
+        newMessageHandle={subjectHandle.onChange}
       />
       <NewMessageTextarea
         placeholder='Сообщение'
-        value={newMassageState.body}
+        value={bodyHandle.value}
         name='body'
-        newMessageHandle={newMessageHandle}
+        newMessageHandle={bodyHandle.onChange}
       />
       <div className='new-message__button-group'>
-        <Button isDisabled={!newMassageState.email} onClick={buttonSentHandle}>
+        <Button isDisabled={!emailHandle.value} onClick={buttonSentHandle}>
           Отправить
         </Button>
         <Button
           isDisabled={
-            !newMassageState.email &&
-            !newMassageState.subject &&
-            !newMassageState.body
+            !emailHandle.value && !subjectHandle.value && !bodyHandle.value
           }
           onClick={buttonDraftHandle}>
           В черновики

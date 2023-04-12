@@ -14,12 +14,11 @@ const useSidebar = () => {
   const dispatch = useAppDispatch()
 
   const [isChangeMode, setIsChangeMode] = useState(false)
-  const [newFolder, setNewFolder] = useState("")
   const [changeFolderId, setChangeFolderId] = useState("")
 
   const {
-    activeFolder,
-    setActiveFolder,
+    activeFolderId,
+    setActiveFolderId,
     setCheckboxState,
     setNewMessageIsShow,
     setSelectedMessage,
@@ -29,7 +28,7 @@ const useSidebar = () => {
   const FolderEntities = useAppSelector(foldersSelector.selectEntities)
 
   const activeFolderHandle = (id: string) => {
-    setActiveFolder(id)
+    setActiveFolderId(id)
     setCheckboxState([])
     setSelectedMessage("")
   }
@@ -48,6 +47,10 @@ const useSidebar = () => {
     dispatch(folderActions.removeFolder(id))
   }
   const successHandle = () => {
+    if (!newFolderHandle.valid.inputValid) {
+      alert(newFolderHandle.valid.empty.messageError)
+      return
+    }
     if (!!changeFolderId) {
       dispatch(
         folderActions.updateFolder({
@@ -69,12 +72,12 @@ const useSidebar = () => {
       )
     }
     setChangeFolderId("")
-    setNewFolder("")
+    newFolderHandle.changeState("")
   }
 
   const changeFolderHandle = (id: string) => {
     setChangeFolderId(id)
-    setNewFolder(FolderEntities[id]!.title)
+    newFolderHandle.changeState(FolderEntities[id]!.title)
   }
   return {
     activeFolderHandle,
@@ -85,9 +88,8 @@ const useSidebar = () => {
     changeHandle,
     buttonHandle,
     isChangeMode,
-    activeFolder,
+    activeFolderId,
     allFolder,
-    newFolder,
   }
 }
 

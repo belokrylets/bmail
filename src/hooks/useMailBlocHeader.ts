@@ -14,7 +14,7 @@ const useMailBlocHeader = (messagesList: IMessages[]) => {
   const {
     checkboxState,
     setCheckboxState,
-    activeFolder,
+    activeFolderId,
     selectedMessage,
     setSelectedMessage,
   } = useContext(Context)
@@ -34,7 +34,7 @@ const useMailBlocHeader = (messagesList: IMessages[]) => {
   }
 
   const deleteHandle = () => {
-    if (folders[activeFolder]!.slug === "cart") {
+    if (folders[activeFolderId]!.slug === "cart") {
       dispatch(messagesActions.removeMessages(checkboxState))
       setCheckboxState([])
     } else {

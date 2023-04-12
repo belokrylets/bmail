@@ -2,13 +2,13 @@ import React from "react"
 import useMainBlockSearch from "hooks/useMainBlockSearch"
 
 const MainBlockSearch = () => {
-  const { inputHandle, searchState } = useMainBlockSearch()
+  const { searchHandle } = useMainBlockSearch()
   return (
     <input
-      onChange={inputHandle}
+      onChange={searchHandle.onChange}
       name='search'
       placeholder='Поиск по имени'
-      value={searchState}
+      value={searchHandle.value}
       className='mail-block-header__search'
     />
   )
