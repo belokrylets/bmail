@@ -1,7 +1,7 @@
 import Button from "components/UI/Button"
 import React from "react"
-import MoveList from "components/UI/MoveList"
-import useCurrentMessage from "hooks/useCurrentMessage"
+import MoveList from "components/UI/MoveList/MoveList"
+import useCurrentMessage from "./useCurrentMessage"
 import IconBtn from "components/UI/IconBtn"
 
 const CurrentMessage = () => {

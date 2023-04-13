@@ -4,7 +4,7 @@ import { actions as messagesActions } from "store/reducers/messagesSlice/message
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import { v4 } from "uuid"
 import { Context } from "components/MailPage/MailPage"
-import useInput from "./UIHooks/useInput"
+import useInput from "../../../../hooks/useInput"
 import {
   emailValid,
   messagesValid,

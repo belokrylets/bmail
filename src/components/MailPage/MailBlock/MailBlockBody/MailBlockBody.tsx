@@ -1,8 +1,8 @@
 import React from "react"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import CurrentMessage from "./CurrentMessage"
-import MessageItem from "./MessageItem"
-import useMailBlockBody from "hooks/useMailBlockBody"
+import MessageItem from "../MessageItem/MessageItem"
+import useMailBlockBody from "components/MailPage/MailBlock/MailBlockBody/useMailBlockBody"
+import CurrentMessage from "../CurrentMessage/CurrentMessage";
 
 interface MailBlockBodyProps {
   messagesList: IMessages[]

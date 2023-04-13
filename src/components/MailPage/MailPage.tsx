@@ -1,8 +1,8 @@
 import React, { createContext } from "react"
 import { IMailPageContext } from "shared/modals/mailPage.modal"
 import MailBlock from "./MailBlock/MailBlock"
-import Sidebar from "./Sidebar"
-import useMailPage from "hooks/useMailPage"
+import Sidebar from "./Sidebar/Sidebar"
+import useMailPage from "components/MailPage/useMailPage"
 
 export const Context = createContext<IMailPageContext>({} as IMailPageContext)
 

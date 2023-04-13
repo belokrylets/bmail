@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { useAppDispatch, useAppSelector } from "./redux"
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux"
 import { Context } from "components/MailPage/MailPage"
 import {
   actions as folderActions,
@@ -7,7 +7,7 @@ import {
 } from "store/reducers/foldersSlice/foldersSlice"
 import { v4 } from "uuid"
 import getTranslit from "shared/utils/getTranslit"
-import useInput from "./UIHooks/useInput"
+import useInput from "../../../hooks/useInput"
 import { newFolderValid } from "shared/validations/validations"
 
 const useSidebar = () => {

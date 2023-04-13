@@ -1,6 +1,6 @@
 import { useState } from "react"
-import useValidation from "./useValidation"
 import { IValidations } from "shared/modals/validation.modal"
+import useValidation from "./useValidation";
 
 const useInput = (initialValue: string, validations: IValidations | null) => {
   const [value, setValue] = useState(initialValue)

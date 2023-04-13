@@ -2,7 +2,7 @@ import { Context } from "components/MailPage/MailPage"
 import { useContext } from "react"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import { actions as messageActions } from "store/reducers/messagesSlice/messagesSlice"
-import { useAppDispatch } from "./redux"
+import { useAppDispatch } from "../../../../hooks/redux"
 
 const useMessageItem = (message: IMessages) => {
   const dispatch = useAppDispatch()

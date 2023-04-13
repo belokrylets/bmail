@@ -3,7 +3,7 @@ import Checkbox from "components/UI/Checkbox"
 import React from "react"
 import getDate from "shared/utils/getDate"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import useMessageItem from "hooks/useMessageItem"
+import useMessageItem from "components/MailPage/MailBlock/MessageItem/useMessageItem"
 import IconBtn from "components/UI/IconBtn"
 
 interface MessageItemProps {

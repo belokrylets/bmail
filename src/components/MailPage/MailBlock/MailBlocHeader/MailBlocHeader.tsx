@@ -1,10 +1,10 @@
 import Checkbox from "components/UI/Checkbox"
 import React from "react"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
-import MainBlockSearch from "./MainBlockSearch"
-import MoveList from "components/UI/MoveList"
-import useMailBlocHeader from "hooks/useMailBlocHeader"
+import MoveList from "components/UI/MoveList/MoveList"
+import useMailBlocHeader from "./useMailBlocHeader"
 import IconBtn from "components/UI/IconBtn"
+import MainBlockSearch from "../MainBlockSearch/MainBlockSearch";
 
 interface MailBlocHeaderProps {
   messagesList: IMessages[]

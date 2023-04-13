@@ -1,5 +1,5 @@
 import React from "react"
-import useMainBlockSearch from "hooks/useMainBlockSearch"
+import useMainBlockSearch from "components/MailPage/MailBlock/MainBlockSearch/useMainBlockSearch"
 
 const MainBlockSearch = () => {
   const { searchHandle } = useMainBlockSearch()

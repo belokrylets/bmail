@@ -1,4 +1,4 @@
-import { IEmpty, IMinLength, IMaxLength } from "hooks/UIHooks/useValidation"
+import { IEmpty, IMinLength, IMaxLength } from "hooks/useValidation"
 
 export interface IUseInput {
   value: string

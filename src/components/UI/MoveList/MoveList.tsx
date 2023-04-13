@@ -1,4 +1,4 @@
-import useMoveList from "hooks/UIHooks/useMoveList"
+import useMoveList from "components/UI/MoveList/useMoveList"
 import React from "react"
 
 interface MoveListProps {

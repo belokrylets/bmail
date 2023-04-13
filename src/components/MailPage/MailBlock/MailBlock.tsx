@@ -1,8 +1,8 @@
 import React from "react"
-import MailBlocHeader from "./MailBlocHeader"
-import MailBlockBody from "./MailBlockBody"
-import NewMessage from "./NewMessage"
-import useMailBlock from "hooks/useMailBlock"
+import MailBlockBody from "./MailBlockBody/MailBlockBody"
+import NewMessage from "./NewMessage/NewMessage"
+import useMailBlock from "components/MailPage/MailBlock/useMailBlock"
+import MailBlocHeader from "./MailBlocHeader/MailBlocHeader";
 
 const MailBlock = () => {
   const { filteredMessage, newMessageIsShow } = useMailBlock()

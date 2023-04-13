@@ -2,7 +2,7 @@ import Button from "components/UI/Button"
 import IconBtn from "components/UI/IconBtn"
 import NewMessageInput from "components/UI/NewMessageInput"
 import NewMessageTextarea from "components/UI/NewMessageTextarea"
-import useNewMessage from "hooks/useNewMessage"
+import useNewMessage from "components/MailPage/MailBlock/NewMessage/useNewMessage"
 
 const NewMessage = () => {
   const {

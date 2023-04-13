@@ -6,7 +6,7 @@ import IconSent from "assets/icons/IconSent"
 import classNames from "classnames"
 import Button from "components/UI/Button"
 import IconBtn from "components/UI/IconBtn"
-import useSidebar from "hooks/useSidebar"
+import useSidebar from "components/MailPage/Sidebar/useSidebar"
 
 const iconsMapping: { [key: string]: JSX.Element } = {
   incoming: <IconIncoming />,

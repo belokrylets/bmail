@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { useAppDispatch } from "./redux"
+import { useAppDispatch } from "../../hooks/redux"
 import { fetchAllMessages } from "store/reducers/messagesSlice/actions"
-import useInput from "./UIHooks/useInput"
+import useInput from "../../hooks/useInput"
 
 const useMailPage = () => {
   const dispatch = useAppDispatch()

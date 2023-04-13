@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { useAppDispatch, useAppSelector } from "./redux"
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux"
 import { Context } from "components/MailPage/MailPage"
 import { IMessages } from "store/reducers/messagesSlice/messages.modal"
 import { messageSelector } from "store/reducers/messagesSlice/messagesSlice"
