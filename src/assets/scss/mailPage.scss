@@ -76,6 +76,9 @@
     grid-template-rows: auto;
     gap: 30px;
     height: 100%;
+    .sidebar__blur {
+      display: none;
+    }
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -251,4 +254,43 @@
       }
     }
   }
+}
+
+
+@media (max-width: 767px) {
+  .mail-page {
+  .mail-page__content {
+    display: flex;
+    position: relative;
+    .sidebar__blur {
+      width: 0;
+      height: 0;
+      transition-duration: 1s;
+      display: block;
+
+      &.sidebar__blur_active {
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(2px);
+        position: absolute;
+        left: 0;
+      }
+    }
+    .sidebar{
+      position: absolute;
+      left: 0;
+      padding:10px;
+
+      transition-duration: 1s;
+      transform: translateX(-200%);
+      background: white;
+      height: 100%;
+      &.sidebar_active{
+        transform: translateX(0%);
+       left: 0;
+        box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12), 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }}
 }

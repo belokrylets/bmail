@@ -15,7 +15,7 @@ const useCurrentMessage = () => {
       email: "",
       name: "",
     },
-    date: "",
+        date: "",
     folder: "",
     messageBody: "",
     status: "",

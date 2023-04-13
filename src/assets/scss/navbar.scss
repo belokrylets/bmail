@@ -8,6 +8,12 @@ header {
   .header__content {
     display: flex;
     align-items: center;
+    .header-burger {
+      display: none;
+      svg{
+        color: $primary-color;
+      }
+    }
     .header-menu,
     .menu {
       .menu__list {
@@ -22,6 +28,20 @@ header {
             color: black;
           }
         }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  header {
+    .header__content {
+      position: relative;
+      .header-burger {
+        display: block;
+        position: absolute;
+        right: 20px;
       }
     }
   }

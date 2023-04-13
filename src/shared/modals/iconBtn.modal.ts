@@ -12,3 +12,4 @@ export type IIconType =
   | "pen"
   | "sent"
   | "success"
+  | "burger";
