@@ -12,7 +12,6 @@ const App = () => {
       <Routes>
         <Route path={navLinks.mail.path} element={<MailPage />} />
       </Routes>
-
       <Footer />
     </BrowserRouter>
   )
